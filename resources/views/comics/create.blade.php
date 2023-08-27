@@ -46,7 +46,8 @@
           </div>
         </div>
         {{-- Button --}}
-        <div>
+        <div class="d-flex justify-content-between">
+          <a href="{{ route('comics.index') }}">Indietro </a>
           <button type="submit" class="btn btn-success">Salva</button>
         </div>
       </div>
