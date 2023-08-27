@@ -6,7 +6,7 @@
         fumetto</a></div>
     @foreach ($comics as $comic)
       <ul>
-        <li>{{ $comic->name }}</li>
+        <li>{{ $comic->title }}</li>
         <a href="{{ route('comics.show', $comic) }}">Vai ai dettagli del fumetto</a>
       </ul>
     @endforeach

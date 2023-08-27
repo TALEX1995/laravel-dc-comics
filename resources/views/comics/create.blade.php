@@ -6,6 +6,7 @@
 @section('main-content')
   <div class="container">
     <form action="{{ route('comics.store') }}" method="POST">
+      @csrf
       <div class="row">
         {{-- Nome --}}
         <h1>Inserisci il nuovo Fumetto</h1>
