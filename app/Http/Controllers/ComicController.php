@@ -67,7 +67,7 @@ class ComicController extends Controller
             'title' =>  ['required', 'string', Rule::unique('comics')->ignore($comic->id)],
             'description' => 'string|nullable',
             'thumb' => 'string|nullable',
-            'price' => 'string||max:255|nullable|min:0',
+            'price' => 'string|max:255|nullable|min:0',
             'series' => 'string|max:255|nullable',
             'sale_date' => 'string|max:255|nullable',
             'type' => 'string|max:255|nullable',
