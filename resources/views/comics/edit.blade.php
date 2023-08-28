@@ -1,8 +1,56 @@
-@extends('layouts.home')
+@extends('layouts.main')
 
 @section('tile', 'Edit')
 
 @section('main-content')
-
-
+  <div class="container">
+    <form action="{{ route('comics.update', $comic) }}" method="POST">
+      @csrf
+      @method('PUT')
+      <div class="row">
+        {{-- Nome --}}
+        <h1>Modifica il fumetto</h1>
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="title" class="form-label">Nome fumetto</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ $comic->title }}">
+          </div>
+        </div>
+        {{-- Price --}}
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="price" class="form-label">Prezzo</label>
+            <input type="text" class="form-control" id="price" name="price" min="0" step=".01"
+              value="{{ $comic->price }}">
+          </div>
+        </div>
+        {{-- Series --}}
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="series" class="form-label">Serie</label>
+            <input type="text" class="form-control" id="series" name="series" value="{{ $comic->series }}">
+          </div>
+        </div>
+        {{-- Type --}}
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="type" class="form-label">Tipo</label>
+            <input type="text" class="form-control" id="type" name="type" value="{{ $comic->type }}">
+          </div>
+        </div>
+        {{-- Description --}}
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="description" class="form-label">Descrizione</label>
+            <textarea class="form-control" id="description" name="description" rows="3">{{ $comic->description }}</textarea>
+          </div>
+        </div>
+        {{-- Button --}}
+        <div class="d-flex justify-content-between">
+          <a href="{{ route('comics.index') }}">Indietro </a>
+          <button type="submit" class="btn btn-success">Salva</button>
+        </div>
+      </div>
+    </form>
+  </div>
 @endsection
