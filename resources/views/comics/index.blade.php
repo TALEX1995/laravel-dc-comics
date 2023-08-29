@@ -14,7 +14,7 @@
               <p class="card-text"><strong>Description:</strong> {{ $comic->description }}</p>
               <p class="card-text"><strong>Artists:</strong> {{ $comic->artists }}</p>
               <p class="card-text"><strong>Writers:</strong> {{ $comic->writers }}</p>
-              <a href="{{ route('comics.show', $comic) }}">Vai ai dettagli del fumetto</a>
+              <a href="{{ route('comics.show', $comic) }}">Vai ai dettagli del fumetto</a> <br>
               <a href="{{ route('comics.edit', $comic) }}">Modifica</a>
             </div>
           </div>
