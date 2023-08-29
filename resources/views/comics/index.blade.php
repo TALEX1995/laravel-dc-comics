@@ -2,6 +2,11 @@
 
 @section('main-content')
   <div class="container">
+    @if (session('delete'))
+      <div class="alert alert-success mt-4">
+        <span>{{ session('delete') }}</span>
+      </div>
+    @endif
     <div class="d-flex justify-content-end mt-3"><a href="{{ route('comics.create') }}" class="btn btn-secondary">Aggiungi un
         fumetto</a></div>
     <div class="row">
