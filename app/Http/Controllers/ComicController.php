@@ -93,4 +93,23 @@ class ComicController extends Controller
 
         return to_route('comics.index')->with('delete', "Il fumetto $comic->title è stato eliminato con successo");
     }
+
+    public function trash()
+    {
+
+        $comics = Comic::onlyTrashed()->get();
+
+
+        return view('comics.trash', compact('comics'));
+    }
+
+    public function restore(string $id)
+    {
+
+        $comic = Comic::onlyTrashed()->findOrFail($id);
+
+        $comic->restore();
+
+        return to_route('comics.trash')->with('restore', "Il fumetto $comic->title è stato ripristinato");
+    }
 }

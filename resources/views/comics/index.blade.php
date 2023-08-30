@@ -26,5 +26,8 @@
         </div>
       @endforeach
     </div>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-warning my-3" href="{{ route('comics.trash') }}">Cestino</a>
+    </div>
   </div>
 @endsection
